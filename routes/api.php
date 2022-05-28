@@ -6,6 +6,9 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PaymentDetailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AutenticationController;
+use App\Http\Controllers\BookController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +25,10 @@ Route::apiResource('/scedule', SceduleController::class);
 Route::apiResource('/payment', PaymentController::class);
 Route::apiResource('/payment_detail', PaymentDetailController::class);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//autentikasi
+Route::post('register', [AutenticationController::class, 'register']);
+Route::post('login', [AutenticationController::class, 'login']);
+Route::get('book', [BookController::class, 'book']);
+Route::get('bookall', [BookController::class, 'bookAuth'])->middleware('jwt.verify');
+Route::get('user', [AutenticationController::class, 'getAuthenticatedUser'])->middleware('jwt.verify');
+
