@@ -31,4 +31,4 @@ Route::post('login', [AutenticationController::class, 'login']);
 Route::get('book', [BookController::class, 'book']);
 Route::get('bookall', [BookController::class, 'bookAuth'])->middleware('jwt.verify');
 Route::get('user', [AutenticationController::class, 'getAuthenticatedUser'])->middleware('jwt.verify');
-
+Route::get('logout', [AutenticationController::class, 'logout']);
