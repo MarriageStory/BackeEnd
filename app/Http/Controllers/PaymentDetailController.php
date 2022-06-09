@@ -27,8 +27,10 @@ class PaymentDetailController extends Controller
     public function store(Request $request)
     {
         $attribut = $request->validate([
+            'payment_for'=>['required'],
             'bayar'=>['required'],
             'tanggal'=>['required'],
+            'detail'=>['required'],
             'id_payment'=>['required'],
             'jam'=>['required'],
         ]);
@@ -58,8 +60,10 @@ class PaymentDetailController extends Controller
     public function update(Request $request, payment_detail $payment_detail)
     {
         $attribut = $request->validate([
+            'payment_for'=>['required'],
             'bayar'=>['required'],
             'tanggal'=>['required'],
+            'detail'=>['required'],
             'id_payment'=>['required'],
             'jam'=>['required'],
         ]);
