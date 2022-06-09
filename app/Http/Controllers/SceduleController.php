@@ -32,6 +32,7 @@ class SceduleController extends Controller
             'tanggal'=>['required'],
             'jam'=>['required'],
             'tempat'=>['required'],
+            'nama_client'=>['required'],
         ]);
 
         $scedule = scedule::create($attribut);
@@ -64,6 +65,7 @@ class SceduleController extends Controller
             'tanggal'=>['required'],
             'jam'=>['required'],
             'tempat'=>['required'],
+            'nama_client'=>['required'],
         ]);
 
             $scedule->update($attribut);

@@ -27,10 +27,10 @@ class PaymentController extends Controller
     public function store(Request $request)
     {
         $attribut = $request->validate([
-            'nama_vendor'=>['required'],
+            'nama_client'=>['required'],
             'tunai_keseluruhan'=>['required'],
             'tanggal'=>['required'],
-            'tunai'=>['required'],
+            'terbayar'=>['required'],
             'keterangan'=>['required'],
         ]);
 
@@ -59,10 +59,10 @@ class PaymentController extends Controller
     public function update(Request $request, payment $payment)
     {
         $attribut = $request->validate([
-            'nama_vendor'=>['required'],
+            'nama_client'=>['required'],
             'tunai_keseluruhan'=>['required'],
             'tanggal'=>['required'],
-            'tunai'=>['required'],
+            'terbayar'=>['required'],
             'keterangan'=>['required'],
         ]);
 
