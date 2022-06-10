@@ -9,5 +9,5 @@ class scedule extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_kegiatan', 'detail_kegiatan','tanggal', 'jam','tempat'];
+    protected $fillable = ['nama_kegiatan', 'detail_kegiatan','tanggal', 'jam','tempat', 'nama_client'];
 }
