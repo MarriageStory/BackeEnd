@@ -27,16 +27,16 @@ class PaymentDetailController extends Controller
     public function store(Request $request)
     {
         $attribut = $request->validate([
-            'payment_for'=>['required'],
-            'bayar'=>['required'],
-            'tanggal'=>['required'],
-            'detail'=>['required'],
-            'id_payment'=>['required'],
-            'jam'=>['required'],
+            'payment_for' => ['required'],
+            'bayar' => ['required'],
+            'tanggal' => ['required'],
+            'detail' => ['required'],
+            'id_payment' => ['required'],
+            'jam' => ['required'],
         ]);
 
         $payment_detail = payment_detail::create($attribut);
-        return response()->json(['data'=>$payment_detail]);
+        return response()->json(['data' => $payment_detail]);
     }
 
     /**
@@ -47,7 +47,7 @@ class PaymentDetailController extends Controller
      */
     public function show(payment_detail $payment_detail)
     {
-        return response()->json(['data'=>$payment_detail]);
+        return response()->json(['data' => $payment_detail]);
     }
 
     /**
@@ -60,16 +60,16 @@ class PaymentDetailController extends Controller
     public function update(Request $request, payment_detail $payment_detail)
     {
         $attribut = $request->validate([
-            'payment_for'=>['required'],
-            'bayar'=>['required'],
-            'tanggal'=>['required'],
-            'detail'=>['required'],
-            'id_payment'=>['required'],
-            'jam'=>['required'],
+            'payment_for' => ['required'],
+            'bayar' => ['required'],
+            'tanggal' => ['required'],
+            'detail' => ['required'],
+            'id_payment' => ['required'],
+            'jam' => ['required'],
         ]);
 
         $payment_detail->update($attribut);
-        return response()->json(['data'=>$payment_detail]);
+        return response()->json(['data' => $payment_detail]);
     }
 
     /**
@@ -80,7 +80,7 @@ class PaymentDetailController extends Controller
      */
     public function destroy(payment_detail $payment_detail)
     {
-        $payment_detail ->delete();
-        return response()->json(['mesage'=>'Data Berhasil dihapus']);
+        $payment_detail->delete();
+        return response()->json(['mesage' => 'Data Berhasil dihapus']);
     }
 }

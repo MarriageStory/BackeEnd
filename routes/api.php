@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AutenticationController;
 use App\Http\Controllers\BookController;
-
+use App\Models\teams;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +20,12 @@ use App\Http\Controllers\BookController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 Route::apiResource('/jadwal', JadwalController::class);
 Route::apiResource('/scedule', SceduleController::class);
 Route::apiResource('/payment', PaymentController::class);
 Route::apiResource('/payment_detail', PaymentDetailController::class);
+Route::apiResource('/teams', teams::class);
 
 //autentikasi
 Route::post('register', [AutenticationController::class, 'register']);
